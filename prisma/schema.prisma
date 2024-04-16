@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "mysql"
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Card {
+  id  Int    @id @default(autoincrement())
+  rus String
+  eng String
+
+  topic   Topic @relation(fields: [topicId], references: [id])
+  topicId Int
+}
+
+model Topic {
+  id    Int    @id @default(autoincrement())
+  title String
+
+  cards Card[]
+  users User[]
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+
+  topics   Topic[]
+  settings Settings?
+}
+
+model Settings {
+  id Int @id @default(autoincrement())
+
+  user  User @relation(fields: [useId], references: [id])
+  useId Int  @unique
+
+  delay     Decimal
+  pause     Int
+  countdown Int
+}

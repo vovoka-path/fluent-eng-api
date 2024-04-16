@@ -1,0 +1,33 @@
+[
+  {
+    "name": "id",
+    "type": "Number",
+    "example": "5",
+    "description": "Get user by id.",
+    "required": false
+  },
+  {
+    "name": "email",
+    "type": "String",
+    "example": "string@mail.com",
+    "description": "Get user by email.",
+    "required": false
+  },
+  {
+    "name": "update",
+    "type": "Number",
+    "example": "025",
+    "description": "A user secret uuid.",
+    "required": true
+  },
+  {
+    "name": "create",
+    "type": "User",
+    // "example": {
+    //   "email": "mail1@mailcom",
+    //   "password": "123456"
+    // },
+    // "description": "Create a new user. Return user data.",
+    "required": false
+  }
+]

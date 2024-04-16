@@ -1,0 +1,5 @@
+/* eslint-disable */
+export default async () => {
+    const t = {};
+    return { "@nestjs/swagger": { "models": [[import("./resources/users/dto/create-user.dto"), { "CreateUserDto": { email: { required: true, type: () => String }, password: { required: true, type: () => String, minimum: 6 } } }], [import("./resources/users/dto/update-user.dto"), { "UpdateUserDto": {} }], [import("./resources/users/entity/user.entity"), { "UserEntity": { id: { required: true, type: () => Number }, email: { required: true, type: () => String }, password: { required: true, type: () => String, minimum: 6 } } }]], "controllers": [[import("./resources/users/users.controller"), { "UsersController": { "create": { type: Object }, "findOneByEmail": { type: Object }, "findAll": { type: [Object] }, "findOneById": { type: Object }, "update": { type: Object }, "remove": { type: Object } } }]] } };
+};
